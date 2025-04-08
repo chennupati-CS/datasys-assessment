@@ -1,0 +1,8 @@
+pandas>=2.0.0
+numpy>=1.24.0
+python-Levenshtein>=0.21.0
+thefuzz>=0.19.0
+nameparser>=1.1.1
+usaddress>=1.0.1
+python-dotenv>=1.0.0
+tqdm>=4.65.0 
