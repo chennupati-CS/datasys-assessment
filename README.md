@@ -11,14 +11,11 @@ A Python package for resolving consumer identities across datasets that lack a s
 - Detailed audit logging of matching decisions
 - Confidence scoring for match quality
 - Comprehensive test coverage
-- **Model explainability** with detailed match reasoning
-- **Robust error handling** and input validation
-- **Edge case handling** for name/address inconsistencies
 
 ## Project Structure
 
 ```
-consumer_identity_resolution/
+datasys_assessment/
 ├── src/
 │   └── consumer_resolution/
 │       ├── __init__.py
@@ -52,8 +49,8 @@ consumer_identity_resolution/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/consumer_identity_resolution.git
-cd consumer_identity_resolution
+git clone https://github.com/chennupati-CS/datasys-assessment.git
+cd datasys-assessment
 ```
 
 2. Create a virtual environment (recommended):
@@ -75,7 +72,7 @@ pip install -e .
 
 2. Run the resolution process:
 ```python
-from consumer_resolution.resolver import ConsumerResolver
+from datasys-assessment.resolver import ConsumerResolver
 
 resolver = ConsumerResolver()
 resolver.load_data()
@@ -200,6 +197,34 @@ python -m unittest discover tests
 4. Push to the branch
 5. Create a Pull Request
 
-## License
+## Output Logs:
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+2025-04-08 09:13:49,467 - __main__ - INFO - Starting consumer resolution process at 2025-04-08 09:13:49.467242
+2025-04-08 09:13:49,467 - __main__ - INFO - Loading dataset A from /Users/chandrasekharchennupati/datasys_assessment/data/input/file_a_with_nicknames.csv
+2025-04-08 09:13:49,472 - __main__ - INFO - Loading dataset B from /Users/chandrasekharchennupati/datasys_assessment/data/input/file_b_with_nicknames.csv
+2025-04-08 09:13:49,477 - __main__ - INFO - Loaded 1500 records from dataset A
+2025-04-08 09:13:49,477 - __main__ - INFO - Loaded 1000 records from dataset B
+2025-04-08 09:13:49,477 - __main__ - INFO - Starting match finding process
+2025-04-08 09:13:50,338 - __main__ - INFO - Found 439 matches after 510 comparisons
+2025-04-08 09:13:50,338 - __main__ - INFO - Match rate: 86.08%
+2025-04-08 09:13:50,338 - __main__ - INFO - Records with multiple matches: 0
+2025-04-08 09:13:50,339 - __main__ - INFO - Starting record merging process
+2025-04-08 09:13:50,708 - __main__ - INFO - Final counts:
+2025-04-08 09:13:50,709 - __main__ - INFO -   Total records in A: 1500
+2025-04-08 09:13:50,709 - __main__ - INFO -   Total records in B: 1000
+2025-04-08 09:13:50,709 - __main__ - INFO -   Matches found: 439
+2025-04-08 09:13:50,709 - __main__ - INFO -   Unmatched from A: 1061
+2025-04-08 09:13:50,709 - __main__ - INFO -   Unmatched from B: 561
+2025-04-08 09:13:50,709 - __main__ - INFO -   Total resolved records: 2061
+2025-04-08 09:13:50,709 - __main__ - INFO - Expected total records: 2061
+2025-04-08 09:13:50,709 - __main__ - INFO - Actual total records: 2061
+2025-04-08 09:13:50,806 - __main__ - INFO - Saved 2061 resolved records to /Users/chandrasekharchennupati/datasys_assessment/data/output/resolved_records.csv
+2025-04-08 09:13:50,806 - __main__ - INFO - Summary statistics:
+2025-04-08 09:13:50,806 - __main__ - INFO -   Total records from A: 1500
+2025-04-08 09:13:50,806 - __main__ - INFO -   Total records from B: 1000
+2025-04-08 09:13:50,806 - __main__ - INFO -   Matches found: 439
+2025-04-08 09:13:50,806 - __main__ - INFO -   Unmatched from A: 1061
+2025-04-08 09:13:50,806 - __main__ - INFO -   Unmatched from B: 561
+2025-04-08 09:13:50,806 - __main__ - INFO -   Total resolved records: 2061
+2025-04-08 09:13:50,812 - __main__ - INFO - Saved audit log with 510 entries to /Users/chandrasekharchennupati/datasys_assessment/data/output/audit_log.csv
+2025-04-08 09:13:50,812 - __main__ - INFO - Consumer resolution process completed successfully in 1.35 seconds
